@@ -15,8 +15,9 @@ streamlit.text('🥑🍞 Avocado Toast')
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
   # Import fruit list with pandas
-import pandas
-my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
+import pandas as pd
+my_fruit_list = pd.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
+my_fruit_list = my_fruit_list.set_index('Fruit')
 
   # Add a pick list to pick the fruit the user wants to include
 streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
