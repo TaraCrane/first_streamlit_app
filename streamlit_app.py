@@ -39,3 +39,6 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_c
 fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
   # Output results to app
 streamlit.dataframe(fruityvice_normalized)
+
+# Connect to Snowflake
+import snowflake.connector
